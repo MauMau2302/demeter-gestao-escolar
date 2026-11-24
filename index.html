@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deméter - Gestão de Alimentação Escolar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Cabeçalho com Logos e Título -->
+    <header>
+      <img src="assets/logo_if.png" alt="Logotipo Instituto Federal" />
+      <div class="marca">
+        <b>🌿</b>
+        <h1>DEMÉTER</h1>
+        <span>Gestão de Alimentação Escolar</span>
+      </div>
+      <img src="assets/logo_escola.png" alt="Logotipo Escola" />
+    </header>
+
+    <main>
+      <!-- Tela 1: Início / Menu Principal -->
+      <section id="inicio" class="tela ativa">
+        <div class="frase">
+          “Alimentação hoje, um futuro melhor amanhã.”
+        </div>
+
+        <div class="duas">
+          <div class="cartao verde">
+            <div class="icon">👥</div>
+            <h2>Professor / Pedagogo</h2>
+            <p>Informe a quantidade de refeições da sua turma e adicione observações nutricionais.</p>
+            <button onclick="abrir('turmas')">Acessar Turmas →</button>
+          </div>
+
+          <div class="cartao bege">
+            <div class="icon">🍴</div>
+            <h2>Cozinha / Merendeira</h2>
+            <p>Visualize o consolidado das refeições, gerencie o cardápio e acompanhe observações.</p>
+            <button class="brown" onclick="abrir('cozinha')">Acessar Painel →</button>
+          </div>
+        </div>
+
+        <div class="menu">
+          <div>
+            <h2>▣ Visualizar Cardápio</h2>
+            <p>Consulte o cardápio mensal disponibilizado pela escola.</p>
+          </div>
+          <button class="blue" onclick="abrir('cardapio')">Ver Cardápio →</button>
+        </div>
+      </section>
+
+      <!-- Tela 2: Seleção de Turma -->
+      <section id="turmas" class="tela">
+        <h2 class="titulo">Selecione sua turma</h2>
+        <div id="grade" class="grade"></div>
+        <button class="voltar" onclick="abrir('inicio')">← Voltar para o início</button>
+      </section>
+
+      <!-- Tela 3: Formulário de Registro da Turma -->
+      <section id="registro" class="tela">
+        <button class="voltar" onclick="abrir('turmas')">← Voltar</button>
+        <h2 id="tituloTurma" class="titulo">Turma</h2>
+        
+        <div class="form">
+          <label for="qtd">Quantidade de refeições:</label>
+          <div>
+            <input id="qtd" type="number" min="0" placeholder="0" /> refeições
+          </div>
+
+          <label for="obs">Observações nutricionais:</label>
+          <textarea id="obs" rows="5" placeholder="Ex.: 1 aluno intolerante à lactose, 2 vegetarianos..."></textarea>
+
+          <button onclick="salvar()">▣ Salvar Informações</button>
+          <p id="msg"></p>
+        </div>
+      </section>
+
+      <!-- Tela 4: Visualização do Cardápio -->
+      <section id="cardapio" class="tela">
+        <button class="voltar" onclick="abrir('inicio')">← Voltar</button>
+        <h2 class="titulo">Cardápio Mensal</h2>
+        <div id="cardapioArea" class="imagem">
+          Nenhum cardápio cadastrado.
+        </div>
+      </section>
+
+      <!-- Tela 5: Painel da Cozinha / Consolidado -->
+      <section id="cozinha" class="tela">
+        <div class="acoes">
+          <button class="voltar" onclick="abrir('inicio')">← Voltar</button>
+          <button onclick="abrir('gerenciar')">▣ Gerenciar Cardápio</button>
+        </div>
+
+        <h2 class="titulo">Consolidado das Refeições</h2>
+
+        <div class="scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Turma</th>
+                <th>Quantidade</th>
+                <th>Observações</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+            <tfoot>
+              <tr>
+                <th>Total</th>
+                <th id="total">0 refeições</th>
+                <th>-</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+
+      <!-- Tela 6: Gerenciador de Cardápio (Upload) -->
+      <section id="gerenciar" class="tela">
+        <button class="voltar" onclick="abrir('cozinha')">← Voltar</button>
+        <h2 class="titulo">Gerenciar Cardápio</h2>
+
+        <div class="duas">
+          <div class="upload">
+            <div class="big">▧</div>
+            <p>Selecionar nova imagem do cardápio</p>
+            <input id="arquivo" type="file" accept="image/*" />
+            <small>Formatos aceitos: JPG, PNG</small>
+          </div>
+
+          <div>
+            <h3>Cardápio Atual</h3>
+            <div id="preview" class="imagem pequena">
+              Nenhum cardápio cadastrado.
+            </div>
+          </div>
+        </div>
+
+        <button class="salvarMenu" onclick="salvarMenu()">▣ Salvar Novo Cardápio</button>
+        <p id="msgMenu"></p>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+      <div>
+        <b>🌿 Deméter</b><br />
+        <small>Por uma alimentação escolar mais justa, saudável e sustentável.</small>
+      </div>
+      <div>
+        G.E.M. Ney Pacheco de Miranda Lima<br />
+        Canoinhas - SC<br />
+        2026
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

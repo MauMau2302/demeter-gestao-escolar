@@ -1,0 +1,401 @@
+/* ===================================================
+   ESTILOS GERAIS E RESET
+=================================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #183f28;
+  background-color: #fffdf6;
+}
+
+/* ===================================================
+   CABEÇALHO
+=================================================== */
+header {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 20px 35px;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  align-items: center;
+  gap: 25px;
+}
+
+header img {
+  max-width: 235px;
+  max-height: 125px;
+  object-fit: contain;
+}
+
+header img:last-child {
+  justify-self: end;
+}
+
+.marca {
+  text-align: center;
+}
+
+.marca > b {
+  font-size: 40px;
+}
+
+.marca h1 {
+  font-family: Georgia, serif;
+  font-size: 48px;
+  margin: 0;
+  border-bottom: 2px solid #6da85d;
+  padding-bottom: 5px;
+}
+
+.marca span {
+  display: block;
+  margin-top: 7px;
+  font-size: 18px;
+}
+
+/* ===================================================
+   TELAS E NAVEGAÇÃO
+=================================================== */
+.tela {
+  display: none;
+  max-width: 1200px;
+  min-height: 570px;
+  margin: 0 auto;
+  padding: 25px 35px 50px;
+}
+
+.tela.ativa {
+  display: block;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 31px;
+}
+
+.frase {
+  background-color: #edf4d9;
+  width: max-content;
+  max-width: 100%;
+  padding: 12px 40px;
+  border-radius: 10px;
+  margin: 0 auto 30px;
+  font-style: italic;
+  text-align: center;
+}
+
+.duas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* ===================================================
+   CARTÕES DE ACESSO
+=================================================== */
+.cartao {
+  padding: 35px;
+  text-align: center;
+  border-radius: 14px;
+  border: 1px solid #d8deb8;
+  min-height: 315px;
+}
+
+.cartao.verde {
+  background-color: #f0f7df;
+}
+
+.cartao.bege {
+  background-color: #fbf3df;
+}
+
+.icon {
+  font-size: 48px;
+}
+
+.cartao h2 {
+  font-size: 28px;
+  margin: 15px 0 10px;
+}
+
+.cartao p {
+  line-height: 1.5;
+  color: #222;
+}
+
+.cartao button {
+  width: 80%;
+  margin-top: 18px;
+}
+
+/* ===================================================
+   BOTÕES E AÇÕES
+=================================================== */
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 14px 25px;
+  background-color: #12683d;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button.brown {
+  background-color: #664313;
+}
+
+button.blue {
+  background-color: #286294;
+}
+
+.voltar {
+  background-color: #dcecc7;
+  color: #194a28;
+  margin-bottom: 20px;
+}
+
+.acoes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===================================================
+   FAIXA CARDÁPIO (TELA INICIAL)
+=================================================== */
+.menu {
+  margin-top: 25px;
+  padding: 22px 35px;
+  background-color: #e9f5fd;
+  border: 1px solid #bfdced;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #174b7a;
+}
+
+.menu h2,
+.menu p {
+  margin: 4px;
+}
+
+/* ===================================================
+   GRADE DE TURMAS
+=================================================== */
+.grade {
+  display: grid;
+  grid-template-columns: repeat(4, 150px);
+  gap: 18px;
+  justify-content: center;
+  margin: 35px auto;
+}
+
+.grade button {
+  background-color: #bce96c;
+  color: #183f28;
+  border: 2px solid #70b63b;
+  font-size: 21px;
+  height: 65px;
+}
+
+/* ===================================================
+   FORMULÁRIO DE REGISTRO
+=================================================== */
+.form {
+  max-width: 800px;
+  margin: 25px auto;
+  background-color: #edf6df;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.form label {
+  font-weight: bold;
+  display: block;
+  margin: 12px 0 6px;
+}
+
+.form input,
+.form textarea {
+  padding: 13px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.form textarea {
+  width: 100%;
+  margin-bottom: 18px;
+  resize: vertical;
+}
+
+.form button {
+  width: 100%;
+}
+
+/* ===================================================
+   TABELA CONSOLIDADA (COZINHA)
+=================================================== */
+.scroll {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #ffffff;
+  color: #222;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 11px;
+  text-align: left;
+}
+
+thead,
+tfoot {
+  background-color: #fff1c5;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  text-align: center;
+}
+
+/* ===================================================
+   ÁREAS DE IMAGEM E UPLOAD
+=================================================== */
+.imagem {
+  min-height: 350px;
+  border: 2px dashed #c8d6bd;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  background-color: #ffffff;
+}
+
+.imagem img {
+  max-width: 100%;
+  max-height: 620px;
+  object-fit: contain;
+}
+
+.pequena {
+  min-height: 300px;
+}
+
+.pequena img {
+  max-height: 300px;
+}
+
+.upload {
+  border: 2px dashed #bdd4da;
+  border-radius: 10px;
+  text-align: center;
+  padding: 55px 20px;
+}
+
+.upload .big {
+  font-size: 65px;
+  color: #9bb8c0;
+}
+
+.upload input {
+  display: block;
+  margin: 20px auto;
+}
+
+.upload small {
+  color: #666;
+}
+
+.salvarMenu {
+  display: block;
+  width: 50%;
+  margin: 30px auto;
+}
+
+#msg,
+#msgMenu {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* ===================================================
+   RODAPÉ
+=================================================== */
+footer {
+  background-color: #edf4dc;
+  padding: 24px 7%;
+  display: flex;
+  justify-content: space-between;
+  color: #496348;
+  font-size: 13px;
+}
+
+footer div:last-child {
+  text-align: right;
+}
+
+/* ===================================================
+   RESPONSIVIDADE (DISPOSITIVOS MÓVEIS)
+=================================================== */
+@media (max-width: 720px) {
+  header {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .marca {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .marca h1 {
+    font-size: 37px;
+  }
+
+  header img {
+    max-width: 145px;
+  }
+
+  .duas {
+    grid-template-columns: 1fr;
+  }
+
+  .grade {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 25px 0;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .tela {
+    padding: 20px;
+  }
+
+  .salvarMenu {
+    width: 100%;
+  }
+}
