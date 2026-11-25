@@ -1,1 +1,0 @@
-Abra index.html. Projeto feito apenas com HTML, CSS e JavaScript puro. Os dados são salvos no localStorage do navegador; não há banco de dados, biblioteca ou framework.
